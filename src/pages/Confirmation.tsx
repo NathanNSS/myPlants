@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
-//import { useNavigation, useRoute } from '@react-navigation/core';
+
+import { useNavigation, useRoute } from '@react-navigation/core';
 
 import { Button } from '../components/Button';
 
@@ -9,8 +10,13 @@ import fonts from '../styles/fonts';
 
 
 export function Confirmation() {
-//   const navigation = useNavigation()
-//   const routes = useRoute()
+
+  const navigation = useNavigation()
+  
+
+  function handleMoveOn(){
+    navigation.navigate("PlantSelect")
+  }
 
   
 
@@ -25,12 +31,13 @@ export function Confirmation() {
           Prontinho
         </Text>
         <Text style={styles.subtitle}>
-        Agora vamos começar a cuidar das suas {'\n'}
-        plantinhas com muito cuidado.
+          Agora vamos começar a cuidar das suas {'\n'}
+          plantinhas com muito cuidado.
         </Text>
         <View style={styles.footer}>
           <Button
             title="Começar"
+            onPress={handleMoveOn}
           />
         </View>
       </View>
