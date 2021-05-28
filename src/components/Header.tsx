@@ -10,7 +10,7 @@ import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import colors from '../styles/colors';
-import userImg from '../assets/UserImg.jpg' 
+import userImg from '../assets/user-4-460.png' 
 import fonts from '../styles/fonts';
 export function Header(){
     const [userName, setUserName] = useState<string>();
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         width:70,
         height:70,
         borderRadius:35,
+        backgroundColor:colors.green_light,
     },
     greeting:{
         fontSize: 32,

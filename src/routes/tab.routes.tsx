@@ -16,8 +16,8 @@ const AuthRoutes = () => {
         inactiveTintColor: colors.heading,
         labelPosition: 'beside-icon',
         style: {
-          paddingVertical: Platform.OS === 'ios' ? 20 : 0,
-          height: Platform.OS === 'ios' ? 88 : 50,
+          paddingVertical: Platform.OS === 'ios' ? 0 : 0,
+          height: Platform.OS === 'ios' ? 58 : 50,
         }
       }}
     >

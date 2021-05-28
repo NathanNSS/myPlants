@@ -145,7 +145,7 @@ export function PlantSelect(){
                             onPress={() => handlePlantSelected(item)}
                         />
                     )}
-                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
                     numColumns={2}
                     onEndReachedThreshold={0.1}
                     onEndReached={({distanceFromEnd}) =>{ handleFetchMore(distanceFromEnd) }}
