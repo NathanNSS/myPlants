@@ -9,11 +9,16 @@ import {
     View,
     Platform,
     Keyboard,
+    Alert,
     
 }from 'react-native';
 import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+//Componentes
 import { Button } from '../components/Button';
 
+//Classes de estilos
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
@@ -36,8 +41,21 @@ export function UserIdentification(){
     }
     const navigation = useNavigation();
 
-    function handleSubmit(){
-        navigation.navigate('Confirmation')
+    async function handleSubmit(){
+        if(!name)
+            return Alert.alert('Me diz como chamar você 😥');
+        try{
+            await AsyncStorage.setItem('@plantManager:user',name);
+            navigation.navigate('Confirmation',{
+                title:'Prontinho',
+                subTitle:'Agora vamos começar a cuidar das suas plantinhas com muito cuidado',
+                buttonTitle:'Começar',
+                icon:'smile',
+                nextScreen:'PlantSelect' 
+            })
+        }catch{
+            Alert.alert('Não foi possivel salvar seu nome 😥');
+        }
     }
     return(
         <SafeAreaView style={styles.container}>
